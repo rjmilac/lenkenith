@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+	<head>		
+		<?= $block->getFinalOnPageSeoTags(); ?>
+		<?php $this->getLayout()->loadTemplateFile('Admin::templates/head_plugs.phtml'); ?>
+	</head>
+	<body class="general-body-class <?php echo 'baseload-module-'.strtolower($block->getRegistry()->get('current_request')->getModule()); ?>">
+		<div id="adm-login-wrapper" data-continue="<?= $block->getContinueRedirect(); ?>" class="relative-wrapper">
+			<div class="top-banner-wrapper">
+				<img class="background-image-cache" src="<?= $block->helper->getModuleResourcePath('Admin','assets/adm-bg-pattern-sample.jpg') ?>" />
+			</div>
+			<div class="mid-panel solo-panel relative-wrapper">
+				<div class="panel panel-default">
+				  	<div class="panel-body">
+				  		<a href="javascript:void(0)" class="btn btn-default btn-fab">
+				  			<i class="material-icons">&#xE0DA;</i>
+				  		</a>
+				    	<h1>
+							<span>Lenk</span><!-- 
+							 --><img src="<?= $block->helper->getModuleResourcePath('Admin','assets/cmsyze-logo-1_0_0_7.png') ?>" /><!-- 
+							 --><span>nith</span><span class="trademark fsize-12">&#8482;</span>
+				    	</h1>
+				    	<div class="sign-in-form-wrapper">
+							<form id="form-adm-signin" class="adm-form" data-sign="<?= $block->getFormSession()->getName().':'.$block->getFormSession()->generate(); ?>">
+								<fieldset>
+									<div class="form-action-response"></div>
+									<div class="form-group label-floating">
+								      	<label for="inputUser" class="control-label is-empty">User Id or Email Address</label>
+								        <input type="text" class="form-control" name="userid" id="inputUser">
+								        <p class="help-block"></p>
+								    </div>
+								    <div class="form-group label-floating">
+								      	<label for="inputPassword" class="control-label is-empty">Password</label>
+								        <input type="password" class="form-control" name="passkey" id="inputPassword">
+								        <p class="help-block"></p>
+								    </div>	
+									<input type="hidden" name="form_name" id="formName" value="<?= $block->getFormSession()->getName(); ?>" />
+								    <input type="hidden" name="form_token" id="formToken" value="<?= $block->getFormSession()->generate(); ?>" />	
+									<input type="hidden" name="continue_redirect" id="inputContinue" value="<?= $block->getContinueRedirect(); ?>" />
+								    <div class="adm-form-action-wrappers">
+								    	<button class="btn btn-raised btn-primary" id="adm-login-form-trigger">Sign in</button>
+								    	<a href="javascript:void(0)" id="adm-forgot-password-trigger" class="btn btn-link ">Can't sign in?</a>
+								    </div>
+								</fieldset>
+							</form>
+							<span class="copyright-text fsize-12">&copy; 2016 Lenkenith&#8482;. All rights reserve.</span>
+				    	</div>
+				  	</div>
+				</div>
+			</div>
+		</div>
+		<?php $this->getLayout()->loadTemplateFile('Admin::templates/adm_page_preloader.phtml'); ?>
+		<script type="text/javascript" src="<?= $this->helper->getModuleResourcePath('Admin','js/loginFormUI.jquery.js');  ?>"></script>
+	</body>
+</html>

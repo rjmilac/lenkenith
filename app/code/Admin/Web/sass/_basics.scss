@@ -1,0 +1,59 @@
+// FONT SIZES
+	@for $i from 8 through 42 {
+	  .fsize-#{$i} { font-size: 1px * $i; }
+	}
+// END OF FONT SIZES
+// ALIGNMENTS
+	@each $t-alignment in left, center, right, justify{
+		.ta-#{$t-alignment}{
+			text-align: $t-alignment;
+		}
+	}
+	@each $v-alignment in top, middle, bottom{
+		.va-#{$v-alignment}{
+			vertical-align: $v-alignment;
+		}
+	}
+// EOF ALIGNMENTS
+// CURSORS
+	@each $cursor in pointer, default, help, progress, text, none, auto, copy, not-allowed, no-drop{
+		.cur-#{$cursor}{
+			cursor: $cursor;
+		}
+	}
+// EOF CURSORS
+// WRAPPERS
+	@each $initially in block, hidden, inline, inline-block{
+		.ini-#{$initially}{
+			vertical-align: $initially;
+		}
+	}
+	.general-body-class{
+		position: relative;
+		max-width: 1560px;
+		margin: auto;
+	}
+	.relative-wrapper{
+		position: relative;
+	}
+	.gen-fw{
+		display: block;
+		width: 100%;
+		margin: auto;
+	}
+// EOF WRAPPERS
+// TABLE LAYOUT CLASSES
+	.tb-wr{
+		&{
+			display: table;
+		}
+		.tb-r-wr{
+			&{
+				display: table-row;
+			}
+			.tb-c-wr{
+				display: table-cell;
+			}
+		}
+	}
+// EOF TABLE LAYOUT

@@ -1,0 +1,30 @@
+<?php
+    error_reporting (E_ERROR | E_WARNING | E_PARSE);
+
+    if (PHP_SAPI !== 'cli') {
+        echo 'lenkenith must be run as a CLI application';
+        exit(1);
+    }
+   
+    try{
+        require_once realpath($_SERVER["DOCUMENT_ROOT"]).'\system\Core\Bootstrap.php';
+        $argv = (!isset($argv)) ? '' : $argv;    
+        $bootstrap = new \Lenkenith\Core\Bootstrap();
+        $_CLI = $bootstrap->runConsoleCli();
+        $_CLI->execute($argv);
+    } catch (\Exception $e) {
+        while ($e) {
+            echo "\n\n";
+            echo "----------------------------------------------------------------------\n";
+            echo "Execution Error \n";
+            echo "----------------------------------------------------------------------\n";
+            echo $e->getMessage();
+            echo $e->getTraceAsString();
+            echo "\n";
+            $e = $e->getPrevious();
+            echo "----------------------------------------------------------------------";
+            echo "\n\n";
+        }
+        exit();
+    }
+?>

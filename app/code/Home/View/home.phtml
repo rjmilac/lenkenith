@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+	<head>		
+		<?= $block->getFinalOnPageSeoTags(); ?>
+		<?php $this->getLayout()->loadTemplateFile('Home::templates/head_plugs.phtml'); ?>
+	</head>
+	<body class="<?php echo 'baseload-module-'.strtolower($block->getRegistry()->get('current_request')->getModule()); ?>">
+		<?php $this->getLayout()->loadTemplateFile('Home::templates/header.phtml','Home\Block\Header'); ?>	
+		Home page
+		<?php $this->getLayout()->loadTemplateFile('Home::templates/footer.phtml','Home\Block\Footer'); ?>
+	</body>
+</html>

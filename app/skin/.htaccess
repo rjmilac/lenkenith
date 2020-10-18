@@ -1,0 +1,16 @@
+# Prevent viewing of .htaccess
+<Files .htaccess>  
+   order allow,deny  
+   deny from all  
+</Files>
+
+<Files ~ ".*\..*">
+	Order Allow,Deny
+	Deny from all
+</Files>
+
+
+<FilesMatch "(?i)\.(jpg|jpeg|jpe|gif|png|doc|docx|pdf|tiff|ico|css|js|mp3|mp4|avi|ttf|woff|woff2|svg)$">
+	Order Deny,Allow
+	Allow from all
+</FilesMatch>

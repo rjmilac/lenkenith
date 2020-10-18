@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+	<head>		
+		<?= $block->getFinalOnPageSeoTags(); ?>
+	</head>
+	<body class="general-body-class <?php echo 'baseload-module-'.strtolower($block->getRegistry()->get('current_request')->getModule()); ?>">
+		<?php $requested_path = $block->getRegistry()->get('current_request')->getRawRequestPath(); ?>
+		Sorry ' /<?= rtrim($requested_path,'/'); ?> ' was not found on this website.
+	</body>
+</html>

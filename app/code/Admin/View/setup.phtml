@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+	<head>		
+		<?= $block->getFinalOnPageSeoTags(); ?>
+		<?php $this->getLayout()->loadTemplateFile('Admin::templates/head_plugs.phtml'); ?>
+	</head>
+	<body class="general-body-class <?php echo 'baseload-module-'.strtolower($block->getRegistry()->get('current_request')->getModule()); ?>">
+		<div id="adm-login-wrapper" class="relative-wrapper">
+			<div class="top-banner-wrapper">
+				<img class="background-image-cache" src="<?= $block->helper->getModuleResourcePath('Admin','assets/adm-bg-pattern-sample.jpg') ?>" />
+			</div>
+			<div class="mid-panel solo-panel relative-wrapper">
+				<div class="panel panel-default">
+				  	<div class="panel-body">
+				  		<a href="javascript:void(0)" class="btn btn-default btn-fab">
+				  			<i class="material-icons">&#xE0DA;</i>
+				  		</a>
+				    	<h1>
+							<span>Lenk</span><!-- 
+							 --><img src="<?= $block->helper->getModuleResourcePath('Admin','assets/cmsyze-logo-1_0_0_7.png') ?>" /><!-- 
+							 --><span>nith</span><span class="trademark fsize-12">&#8482;</span>
+				    	</h1>
+				    	<div class="sign-in-form-wrapper">
+							<form id="form-adm-setup" class="adm-form" data-ins="form:adm:setup" data-sign="<?= md5('xform:adm:signin'.date('F:h:i:s')); ?>">
+								<fieldset>
+									<div class="form-action-response"></div>
+									<h4>Welcome to the Admin module</h4>
+									<p>To start using this module, register the first admin account. Please fill up the form below accordingly. All fields are required.</p>
+									<div class="form-group label-floating">
+								      	<label for="inputFirstName" class="control-label is-empty">First Name</label>
+								        <input type="text" class="form-control is-required" name="firstname" id="inputFirstName" required>
+								        <p class="help-block"></p>
+								    </div>
+								    <div class="form-group label-floating">
+								      	<label for="inputLastName" class="control-label is-empty">Last Name</label>
+								        <input type="text" class="form-control is-required" name="lastname" id="inputLastName" required>
+								        <p class="help-block"></p>
+								    </div>
+								    <div class="form-group label-floating">
+								      	<label for="inputEmail" class="control-label is-empty">Email Address</label>
+								        <input type="email" class="form-control is-required" name="email" id="inputEmail" required>
+								        <p class="help-block"></p>
+								    </div>
+									<div class="form-group label-floating">
+								      	<label for="inputUser" class="control-label is-empty">User Id</label>
+								        <input type="text" class="form-control is-required" name="userid" id="inputUser" required>
+								        <p class="help-block"></p>
+								    </div>
+								    <div class="form-group label-floating">
+								      	<label for="inputPassword" class="control-label is-empty">Password</label>
+								        <input type="password" class="form-control is-required" name="passkey" id="inputPassword" required>
+								        <p class="help-block"></p>
+								    </div>
+								    <div class="form-group label-floating">
+								      	<label for="inputConfirmPassword" class="control-label is-empty">Confirm Password</label>
+								        <input type="password" class="form-control is-required" name="confirmpasskey" id="inputConfirmPassword" required>
+								        <p class="help-block"></p>
+								    </div>
+								    <div class="adm-form-action-wrappers">
+								    	<button class="btn btn-raised btn-primary" id="adm-login-form-trigger">Register</button>
+								    </div>
+								</fieldset>
+							</form>
+							<span class="copyright-text fsize-12">&copy; 2016 Lenkenith&#8482;. All rights reserve.</span>
+				    	</div>
+				  	</div>
+				</div>
+			</div>
+		</div>
+		<?php $this->getLayout()->loadTemplateFile('Admin::templates/adm_page_preloader.phtml'); ?>
+		<script type="text/javascript" src="<?= $this->helper->getModuleResourcePath('Admin','js/adminSetupUI.jquery.js');  ?>"></script>
+	</body>
+</html>

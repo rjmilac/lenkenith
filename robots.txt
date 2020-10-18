@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /app/
+Disallow: /var/
+Disallow: /config/
+Disallow: /model/
+Disallow: /utils/
+Disallow: /system/
+Disallow: /uploads/
+Disallow: /bin/
+
+Sitemap: /sitemap.xml
+
+

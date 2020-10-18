@@ -1,0 +1,23 @@
+<div id="adm-page-preloader">
+	<div class="progress progress-striped active">
+        <div class="progress-bar" style="width: 0%"></div>
+        <script>
+        	function admPreloadProgress($percent){
+        		var $admProgressBar = $('#adm-page-preloader > .progress > .progress-bar');
+        		$admProgressBar.width($percent);
+        	}
+        	setTimeout(function(){ admPreloadProgress('5%') },500);
+        	setTimeout(function(){ admPreloadProgress('37%') },800);
+        	$(window).load(function(){
+        		setTimeout(function(){ admPreloadProgress('55%') },1300);
+        		setTimeout(function(){ admPreloadProgress('85%') },1800);
+        		setTimeout(function(){ admPreloadProgress('100%'); },2400);
+        		setTimeout(function(){ $('#adm-page-preloader').fadeOut(200,function(){
+        			$('#adm-login-wrapper').fadeIn(500,function(){
+        				$('input:-webkit-autofill[name="passkey"]').focus().click();
+        			});
+        		})}, 2500);
+        	});
+        </script>
+    </div>
+</div>

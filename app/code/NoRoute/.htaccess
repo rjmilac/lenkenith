@@ -1,0 +1,10 @@
+# Prevent viewing of .htaccess
+<Files .htaccess>  
+   order allow,deny  
+   deny from all  
+</Files>
+
+<Files ~ ".*\..*">
+	Order Allow,Deny
+	Deny from all
+</Files>

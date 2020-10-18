@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customRoutes>
+	<controllerRoute name="index" target="Account\Login">
+		<actionRoute name="index" target="index" />
+	</controllerRoute>
+	<controllerRoute name="login" target="Account\Login">
+	</controllerRoute>
+</customRoutes>
